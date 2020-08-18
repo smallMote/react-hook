@@ -1,0 +1,11 @@
+.state-hook-item ~ .state-hook-item {
+    margin-top: 24px;
+}
+
+@media (max-width: 767px) {
+  .state-hook-object {
+    .ant-col ~ .ant-col {
+      margin-top: 24px;
+    }
+  }
+}
