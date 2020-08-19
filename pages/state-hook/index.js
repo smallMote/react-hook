@@ -6,6 +6,7 @@ const IndexPage = () => {
 	const [count, setCount] = useState(0)
   const [user, setUser] = useState({ name: 'Larry' })
   const [fruits, setFruits] = useState(['Apple', 'Banana']) // Strawberry
+  const [func, setFunc] = useState(() => 0)
   // 新对象切换
   function toggleObjectOfNew() {
     setUser(user.name === 'Larry' ? { name: 'Anna' } : { name: 'Larry' })
@@ -76,6 +77,19 @@ const IndexPage = () => {
           </Row>
 				</Card>
 			</div>
+      <div className="state-hook-item state-hook-func">
+        <Card title="可以传递一个函数，useState会使用函数的返回值">
+          <h1>{ func }</h1>
+          <Space>
+            <Button onClick={
+              () => setFunc(func + 1)
+            } type="primary">+</Button>
+            <Button onClick={
+              () => setFunc(func - 1)
+            } type="primary">-</Button>
+          </Space>
+        </Card>
+      </div>
 		</div>
 	)
 }
